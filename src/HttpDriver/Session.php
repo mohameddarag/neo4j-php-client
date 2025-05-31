@@ -179,7 +179,7 @@ class Session implements SessionInterface
             $st = [
                 'statement' => $statement->text(),
                 'resultDataContents' => ['REST', 'GRAPH'],
-                'includeStats' => true,
+//                'includeStats' => true,
             ];
             if (!empty($statement->parameters())) {
                 $st['parameters'] = $this->formatParams($statement->parameters());
@@ -191,10 +191,10 @@ class Session implements SessionInterface
             'statements' => $statements,
         ]);
         $headers = [
-            [
+//            [
                 'X-Stream' => true,
                 'Content-Type' => 'application/json',
-            ],
+//            ],
         ];
 
         return $this->requestFactory->createRequest('POST', sprintf('%s/db/data/transaction/commit', $this->uri), $headers, $body);
