@@ -254,7 +254,7 @@ class Session implements SessionInterface
             $st = [
                 'statement' => $statement->text(),
                 'resultDataContents' => ['REST', 'GRAPH'],
-                'includeStats' => true,
+                // 'includeStats' => true,
             ];
             if (!empty($statement->parameters())) {
                 $st['parameters'] = $this->formatParams($statement->parameters());
